@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faidul Islam - Webpage</title>
+  <style>
+    /* Reset and base styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #FF7E5F, #FD3A69, #A767D8, #4B92D1);
+      background-size: 200% 200%;
+      animation: gradientShift 10s ease infinite;
+      color: #fff;
+      overflow: hidden;
+      text-align: center; /* Centers all text and button */
+    }
+
+    /* Hero section without background box */
+    .hero-section {
+      max-width: 100%;
+      opacity: 0;
+      animation: fadeIn 1.5s ease-in forwards;
+      padding: 2.5rem;
+    }
+
+    /* Main heading with cursor effect */
+    .intro h1 {
+      font-size: 3.5rem;
+      color: #f0f0f0;
+      margin-bottom: 1.2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      position: relative;
+      display: inline-block;
+      animation: typingMain 5s steps(40, end) forwards;
+    }
+
+    /* Highlighting "Faidul" */
+    .name-highlight {
+      color: #7FFFD4;
+      transition: color 0.4s ease-in-out;
+    }
+
+    /* Moving cursor animation */
+    .intro h1::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background-color: #FFFFFF;
+      animation: cursorBlink 0.8s steps(1) infinite;
+    }
+
+    /* Subheading typing animation */
+    .typing-animation {
+      font-size: 1.8rem;
+      color: #FFD700;
+      margin-top: 0.5rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 4px solid #FFD700;
+      animation: blinkCaret 0.75s step-end infinite;
+    }
+
+    /* Button styling */
+    .scroll-button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      color: #fff;
+      background-color: #FF7E5F;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      animation: fadeIn 2.5s ease-in forwards;
+    }
+
+    .scroll-button:hover {
+      background-color: #A767D8;
+    }
+
+    /* Background gradient animation */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Fade-in animation for hero section */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Typing animation for main heading */
+    @keyframes typingMain {
+      from { width: 0; }
+      to { width: 18ch; }
+    }
+
+    /* Cursor blinking */
+    @keyframes cursorBlink {
+      50% { opacity: 0; }
+    }
+
+    /* Blinking caret for subheading */
+    @keyframes blinkCaret {
+      50% { border-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-section">
+    <div class="intro">
+      <h1 id="main-heading">Hello, I'm <span class="name-highlight">Faidul</span></h1>
+      <h2 class="typing-animation" id="sub-heading"></h2>
+      <a href="index_home.html">
+      <button class="scroll-button" onclick="scrollToSection()">Learn More</button>
+    </a>
+    </div>
+  </div>
+
+  <script>
+    // Text for cycling roles
+    const roles = ["Web Developer", "Skin Maker", "Minecraft server Expert", "Creative Thinker"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const speed = 120;
+
+    function typeEffect() {
+      const subHeading = document.getElementById("sub-heading");
+
+      // Define current role
+      let currentRole = roles[roleIndex];
+      let displayText = currentRole.substring(0, charIndex);
+
+      // Update the text content in subheading
+      subHeading.textContent = displayText;
+
+      // Typing and deleting logic
+      if (!isDeleting && charIndex < currentRole.length) {
+        charIndex++;
+        setTimeout(typeEffect, speed);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeEffect, speed / 2);
+      } else {
+        isDeleting = !isDeleting;
+        if (!isDeleting) {
+          roleIndex = (roleIndex + 1) % roles.length;
+        }
+        setTimeout(typeEffect, 1000);
+      }
+    }
+
+    // Scroll function
+    function scrollToSection() {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    }
+
+    // Start the typing effect after the main heading finishes animation
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(typeEffect, 5000); // Start delay for subheading typing effect
+    });
+  </script>
+</body>
+</html>

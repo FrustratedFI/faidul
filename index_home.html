@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faidul Islam - Homepage</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Overall styling */
+    body, html {
+      scroll-behavior: smooth;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #23395D, #1D3557);
+      color: #F1FAEE;
+      cursor: url('https://example.com/custom-cursor.png'), auto;
+    }
+
+    /* Navbar styling */
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(34, 45, 56, 0.8);
+      padding: 1rem 0;
+      z-index: 1000;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #A8DADC;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #F1FAEE;
+    }
+
+    /* Hero section styling */
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(180deg, #ff7e5f 30%, #feb47b 60%, #23395D 100%);
+    }
+
+    /* Animated Welcome Text */
+    .hero h1 {
+      font-size: 4rem;
+      color: #F1FAEE;
+      animation: fadeIn 2s ease-out, scaleUp 1.5s ease-out;
+      cursor: pointer;
+      background: linear-gradient(90deg, #ff7e5f, #feb47b, #1D3557);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero h1 span {
+      display: inline-block;
+      color: white;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    /* Text animation on hover */
+    .hero h1 span:hover {
+      transform: translateY(-5px) rotate(-3deg);
+      color: #00FFFF;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #00FFFF;
+      font-weight: bold;
+    }
+
+    .hero button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      background-color: #E63946;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #E76F51;
+      transform: translateY(-3px);
+    }
+
+    /* Section styling */
+    section {
+      padding: 5rem 2rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .about, .skills, .portfolio, .contact {
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Extended Text and Hyperlink */
+    .section-content p {
+      color: #A8DADC;
+      line-height: 1.6;
+      margin: 1rem 0;
+    }
+
+    .section-content p a {
+      color: #E63946;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .section-content p a:hover {
+      color: #F1FAEE;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(34, 45, 56, 0.9);
+      color: #A8DADC;
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes scaleUp {
+      0% { transform: scale(0.8); }
+      100% { transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index_webpage.html">Welcome</a></li>
+      <li><a href="index_home.html">Home</a></li>
+      <li><a href="index_about.html">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="index_contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>
+      <span>Welcome</span> <span>to</span> <span>my</span> <span>world.</span>
+      <br>
+      <span>I</span> <span>am</span> <span>Faidul</span> <span>Islam.</span>
+    </h1>
+    <p>I'm a Developer & Creative Enthusiast</p>
+    <button onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' });">Discover More</button>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h2>About Me</h2>
+    <div class="section-content">
+      <p>
+        I'm a passionate developer who thrives on challenges and loves to build interactive experiences.
+        <a href="index_about.html">Learn more about my background</a> and explore how I’ve developed my skills over the years.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <div class="section-content">
+      <p>
+        With expertise in HTML, CSS, JavaScript, and Minecraft development, I bring creative solutions to life.
+        <a href="skills.html">See my full skillset</a> and how I apply them in various projects.
+      </p>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <h2>My Work</h2>
+    <div class="section-content">
+      <p>
+        Discover my latest projects where creativity meets functionality.
+        <a href="portfolio.html">Browse my portfolio</a> to see how I bring ideas to life.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2>Contact Me</h2>
+    <div class="section-content">
+      <p>
+        I'm open for collaborations or any inquiries you may have.
+        <a href="index_contact.html">Get in touch with me</a> to discuss potential opportunities.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2024 Faidul Islam. All Rights Reserved.
+  </footer>
+</body>
+</html>

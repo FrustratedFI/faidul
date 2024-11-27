@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Arial', sans-serif;
+      height: 100%;
+      background: linear-gradient(135deg, #00BFFF, #FF7F50, #FFD700); /* Sunset and Sea Colors */
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
+      margin: 0;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #FFD700;
+      margin-top: 4rem;
+      text-align: center;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .intro-paragraph {
+      max-width: 900px;
+      text-align: center;
+      margin: 3rem 1rem;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #ffffff;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem 0;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    .social-media a {
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-media a:hover {
+      color: #FFD700;
+    }
+
+    .contact-form-container {
+      width: 100%;
+      max-width: 600px;
+      padding: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .contact-form-container h2 {
+      font-size: 2rem;
+      color: #FFD700;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border: 1px solid #FFD700;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      width: 100%;
+      background-color: #FFD700;
+      color: black;
+      padding: 1rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #FF7F50;
+    }
+
+    footer {
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Page Header -->
+  <h1>Contact Me</h1>
+
+  <!-- Introduction Paragraph -->
+  <p class="intro-paragraph">
+    I'm always open to new ideas, collaborations, and discussions. Whether you have a question or just want to say hi, feel free to reach out! You can fill out the form below, or you can get in touch with me through my social media profiles.
+  </p>
+
+  <!-- Social Media Links Section -->
+  <div class="social-media">
+    <a href="https://www.facebook.com/yourprofile" target="_blank" title="Facebook">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" width="40" height="40">
+    </a>
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+      <img src="https://static.vecteezy.com/system/resources/previews/018/930/480/non_2x/linkedin-logo-linkedin-icon-transparent-free-png.png" alt="LinkedIn" width="60" height="60">
+    </a>
+    <a href="https://github.com/yourprofile" target="_blank" title="GitHub">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="40" height="40">
+    </a>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    &copy; 2024 Faidul Islam | All Rights Reserved
+  </footer>
+
+  <script>
+    // JavaScript to animate the social media icons and show them after page load
+    window.addEventListener('load', () => {
+      const socialMediaLinks = document.querySelector('.social-media');
+      socialMediaLinks.style.opacity = 1;
+      socialMediaLinks.style.transform = 'translateY(0)';
+    });
+
+    // Hover effects for social media icons
+    document.querySelectorAll('.social-media a').forEach(function(icon) {
+      icon.addEventListener('mouseover', function() {
+        icon.style.transform = "scale(1.2)";
+      });
+      icon.addEventListener('mouseout', function() {
+        icon.style.transform = "scale(1)";
+      });
+    });
+  </script>
+
+</body>
+</html>
